@@ -2,9 +2,19 @@
 import numpy as np
 import pickle
 import streamlit as st
+import gzip
 
-#loading the saved model
-loaded_model = pickle.load (open ("heart_trained_model.sav", 'rb'))
+# Path to the compressed file
+compressed_file_path = 'heart_trained_model.sav.gz'
+
+# Path to the output file (without .gz extension)
+output_file_path = 'heart_trained_model.sav_1'
+
+with gzip.open(compressed_file_path, 'rt') as compressed_file:
+    # Read the content from the compressed file and write it to the output file
+    content = compressed_file.read()
+    #loading the saved model
+    loaded_model = pickle.load (content)
 
 #Creating a function for Prediction
 def heartdisease_prediction (input_data):
