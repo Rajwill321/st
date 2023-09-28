@@ -7,14 +7,9 @@ import gzip
 # Path to the compressed file
 compressed_file_path = 'heart_trained_model.sav.gz'
 
-# Path to the output file (without .gz extension)
-output_file_path = 'heart_trained_model.sav_1'
-
-with gzip.open(compressed_file_path, 'rt') as compressed_file:
-    # Read the content from the compressed file and write it to the output file
-    content = compressed_file.read()
+with gzip.open(compressed_file_path, 'rb') as compressed_file:
     #loading the saved model
-    loaded_model = pickle.load (content)
+    loaded_model = pickle.load(compressed_file)
 
 #Creating a function for Prediction
 def heartdisease_prediction (input_data):
