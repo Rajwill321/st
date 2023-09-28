@@ -1,15 +1,11 @@
 #Importing the libraries
 import numpy as np
-import pickle
+import joblib
 import streamlit as st
-import gzip
 
-# Path to the compressed file
-compressed_file_path = 'heart_trained_model.sav.gz'
 
-with gzip.open(compressed_file_path, 'rb') as compressed_file:
-    #loading the saved model
-    loaded_model = pickle.load(compressed_file)
+#loading the saved model
+loaded_model = joblib.load ("heart.pkl")
 
 #Creating a function for Prediction
 def heartdisease_prediction (input_data):
