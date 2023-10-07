@@ -11,7 +11,7 @@ def user_input_features():
     tran_amt = st.number_input('Amount in Credit Card Transaction')
     trans_date = st.date_input("Date of Credit Card Transaction (YYYY/MM/DD)", value="today")
     trans_time = st.time_input('Date of Credit Card Transaction', value="now")
-    tran_category = st.selectbox('Transaction Category', ['grocery_pos', 'shopping_pos', 'shopping_net', 'gas_transport', 'home', 'kids_pets', 'personal_care', 'food_dining', 'entertainment', 'misc_pos', 'health_fitness', 'misc_net', 'grocery_net', 'travel'])
+    tran_category = st.selectbox('Transaction Category', ['misc_net', 'grocery_pos', 'shopping_pos', 'shopping_net', 'gas_transport', 'home', 'kids_pets', 'personal_care', 'food_dining', 'entertainment', 'misc_pos', 'health_fitness', 'grocery_net', 'travel'])
     
     data = {
         'cc_num': cc_num,
