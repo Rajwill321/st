@@ -25,3 +25,7 @@ def user_input_features():
 
 st.title('Credit Card Transaction input for Fraud Detection')
 
+st.session_state.user_data = user_input_features()
+
+if st.button("Predict"):
+    st.write(st.session_state.user_data)
